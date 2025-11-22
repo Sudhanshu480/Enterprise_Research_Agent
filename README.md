@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.12-blue.svg" />
   <img src="https://img.shields.io/badge/Streamlit-App-red.svg" />
-  <img src="https://img.shields.io/badge/Google-Gemini%201.5%20Pro-brightgreen.svg" />
+  <img src="https://img.shields.io/badge/Google-Gemini%202.5%20Pro-brightgreen.svg" />
   <img src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   <img src="https://img.shields.io/badge/Agentic%20AI-Research%20Assistant-purple.svg" />
   <img src="https://img.shields.io/github/last-commit/Sudhanshu480/Enterprise_Research_Agent" />
