@@ -1,0 +1,13 @@
+streamlit>=1.25.0
+requests>=2.31.0
+python-dotenv>=1.0.0
+yfinance>=0.2.25
+fpdf2>=2.7.0
+google-generativeai>=0.2.0
+# google-api-python-client for Google Custom Search alternative (optional)
+google-api-python-client>=2.95.0
+# search fallback
+duckduckgo_search==3.5.0
+
+# dev / utils
+pydantic>=1.10.7
