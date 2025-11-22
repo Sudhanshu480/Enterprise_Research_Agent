@@ -116,14 +116,14 @@ Every search query, API call, and model thought process is logged in the **"Tool
 +------------------------------------------------+
                          |
                          v
-+-----------------------------+
-| External Information APIs   |
-+-----------------------------+
-| Google Search API (CSE)     |
-| DuckDuckGo Search(fallback) |
-| yFinance (stock + market)   |
-| Gemini 2.5 Pro (LLM)        |
-+-----------------------------+
+          +-----------------------------+
+          | External Information APIs   |
+          +-----------------------------+
+          | Google Search API (CSE)     |
+          | DuckDuckGo Search(fallback) |
+          | yFinance (stock + market)   |
+          | Gemini 2.5 Pro (LLM)        |
+          +-----------------------------+
 ```
 
 ---
