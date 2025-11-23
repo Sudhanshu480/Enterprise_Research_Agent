@@ -20,7 +20,6 @@ logger = logging.getLogger("company_agent")
 logging.basicConfig(level=logging.INFO)
 
 # --- HELPER FUNCTIONS ---
-
 def safe_generate_text(model_instance, prompt, max_tokens=8192):
     """
     Reliably extracts text from Gemini.
@@ -58,14 +57,13 @@ class CompanyResearchAgent:
         self.google_api_key = google_api_key
         self.cse_id = cse_id
         
-        # --- STRICTLY SET TO GEMINI 2.5 PRO ---
         self.model_name = "gemini-2.5-pro" 
 
-        # 2. Configure Gemini
+        # Configure Gemini
         genai.configure(api_key=self.genai_api_key)
         self.model = genai.GenerativeModel(self.model_name)
 
-        # 3. Initialize State
+        # Initialize State
         self.company_memory: Dict[str, Dict[str, Any]] = {}
         self.tool_calls: List[Dict[str, Any]] = []
         self.chat_history: List[Dict[str, str]] = []
@@ -213,8 +211,7 @@ class CompanyResearchAgent:
 
         if status_callback: status_callback("📝 Writing Comprehensive Report (Step 1/2)...")
         
-        # --- STEP 1: GENERATE TEXT REPORT ONLY ---
-        # UPDATED PROMPT: No "Date", "Prepared By", or conversational filler.
+        # --- STEP 1: GENERATE TEXT REPORT ---
         report_prompt = f"""
         Role: Senior Strategy Consultant.
         Task: Create a COMPREHENSIVE Strategic Account Plan for '{company_name}'.
@@ -306,7 +303,7 @@ class CompanyResearchAgent:
         if not mem: return "Error: Company not found"
         mem["json"][section] = new_val
         
-        # UPDATED PROMPT: Strict formatting, no filler.
+        # Strict formatting, no filler.
         prompt = f"""
         The user has manually updated the '{section}' section of the account plan.
         Updated JSON Data: {json.dumps(mem['json'])}

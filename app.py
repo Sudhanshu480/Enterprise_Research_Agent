@@ -1,20 +1,18 @@
-# app.py
 import streamlit as st
 import os
 import json
 import time
 from dotenv import load_dotenv 
 
-# 1. LOAD ENV STRICTLY BEFORE IMPORTS
 load_dotenv()
 
-# 2. CHECK KEYS BEFORE AGENT INIT
+# CHECK KEYS BEFORE AGENT INITIALIZATION
 api_key = os.getenv("GOOGLE_GENERATIVEAI_KEY")
 if not api_key:
     st.error("❌ CRITICAL ERROR: GOOGLE_GENERATIVEAI_KEY not found in .env file.")
     st.stop()
 
-# 3. NOW IMPORT AGENT (It is safe now)
+# NOW IMPORT AGENT 
 from agent import CompanyResearchAgent
 from fpdf import FPDF
 
@@ -159,7 +157,7 @@ with tabs[1]:
                             st.error(f"PDF Error: {e}")
 
                 with d_col2:
-                    # Download UPDATED (Current) Report
+                    # Download UPDATED Report
                     if st.button("📥 Download Updated Report (PDF)"):
                         try:
                             pdf = FPDF()
